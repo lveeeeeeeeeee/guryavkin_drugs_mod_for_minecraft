@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:glass_bottle"
+    },
+    "$": {
+      "item": "minecraft:stick"
+    },
+    "&": {
+      "item": "drugsmodguryavkin:weed"
+    }
+  },
+  "pattern": [
+    " &",
+    "$#"
+  ],
+  "result": {
+    "item": "drugsmodguryavkin:bong"
+  }
+}
