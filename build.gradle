@@ -56,6 +56,7 @@ minecraft {
                     source sourceSets.main
                 }
             }
+            args '--tweakClass', 'org.spongepowered.asm.launch.MixinTweaker', '--mixin', 'mixins.drugsmodguryavkin.json'
         }
 
         server {
@@ -154,6 +155,10 @@ jar {
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Vendor"   : "drugsmodsareus",
+                "TweakClass": "org.spongepowered.asm.launch.MixinTweaker",
+                "MixinConfigs": "mixins.drugsmodguryavkin.json",
+                "FMLCorePluginContainsFMLMod": "true",
+                "ForceLoadAsMod": "true",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }

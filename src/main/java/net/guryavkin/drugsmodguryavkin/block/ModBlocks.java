@@ -2,11 +2,16 @@ package net.guryavkin.drugsmodguryavkin.block;
 
 import net.guryavkin.drugsmodguryavkin.DrugsModGuryavkin;
 import net.guryavkin.drugsmodguryavkin.block.custom.Bong;
+import net.guryavkin.drugsmodguryavkin.block.custom.WeedBlock;
+import net.guryavkin.drugsmodguryavkin.effect.ModEffects;
+import net.guryavkin.drugsmodguryavkin.effect.WeedEffect;
 import net.guryavkin.drugsmodguryavkin.item.ModItems;
+import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -27,6 +32,11 @@ public class ModBlocks {
                     noOcclusion().sound(SoundType.GLASS)),
             Bong.BONG_ITEM
     );
+
+    public static final RegistryObject<Block> WEED_CROP = BLOCKS.register("weed_bush",
+            () -> new WeedBlock(BlockBehaviour.Properties.of(Blocks.TALL_GRASS.defaultBlockState().getMaterial())
+                    .noCollission().instabreak().sound(SoundType.GRASS))
+            );
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, Item.Properties properties) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

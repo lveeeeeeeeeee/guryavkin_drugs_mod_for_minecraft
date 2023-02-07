@@ -27,11 +27,11 @@ displayName="Drugs Mod" #mandatory
 # A URL for the "homepage" for this mod, displayed in the mod UI
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
-logoFile="examplemod.png" #optional
+logoFile="mod_icon.png" #optional
 # A text field displayed in the mod UI
-credits="guryavkin lyoha" #optional
+credits="Code, shaders and 3d Blockbench models: guryavkin lyoha, \ntextures: blibi_tpk" #optional
 # A text field displayed in the mod UI
-authors="guryavkin lyoha" #optional
+authors="guryavkin lyoha, blibi_tpk" #optional
 # Display Test controls the display for your mod in the server connection screen
 # MATCH_VERSION means that your mod will cause a red X if the versions on client and server differ. This is the default behaviour and should be what you choose if you have server and client elements to your mod.
 # IGNORE_SERVER_VERSION means that your mod will not cause a red X if it's present on the server but not on the client. This is what you should use if you're a server only mod.
@@ -43,7 +43,7 @@ authors="guryavkin lyoha" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''drugs for Minecraft'''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.examplemod]] #optional
+[[dependencies.drugsmodguryavkin]] #optional
     # the modid of the dependency
     modId="forge" #mandatory
     # Does this dependency have to exist - if not, ordering below must be specified
@@ -55,7 +55,7 @@ description='''drugs for Minecraft'''
     # Side this dependency is applied on - BOTH, CLIENT or SERVER
     side="BOTH"
 # Here's another dependency
-[[dependencies.examplemod]]
+[[dependencies.drugsmodguryavkin]]
     modId="minecraft"
     mandatory=true
 # This version range declares a minimum of the current minecraft version up to but not including the next major version

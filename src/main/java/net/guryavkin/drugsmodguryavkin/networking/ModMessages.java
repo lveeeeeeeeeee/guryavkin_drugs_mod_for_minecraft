@@ -49,8 +49,6 @@ public class ModMessages {
                 .add();
     }
 
-
-
     public static <MSG> void sendToServer(MSG message)
     {
         INSTANCE.sendToServer(message);

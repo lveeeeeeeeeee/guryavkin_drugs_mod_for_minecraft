@@ -10,12 +10,13 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModEffects {
+
     public static final DeferredRegister<MobEffect> MOB_EFFECTS = DeferredRegister.
             create(ForgeRegistries.MOB_EFFECTS, DrugsModGuryavkin.MOD_ID);
 
     public static final RegistryObject<MobEffect> WEED = MOB_EFFECTS.register(
-            "weed_effect",
-            () -> new WeedEffect(MobEffectCategory.NEUTRAL, MobEffects.POISON.getColor())
+            "lsd_effect",
+            () -> new LSDEffect(MobEffectCategory.NEUTRAL, MobEffects.POISON.getColor())
     );
 
     public static void register(IEventBus eventBus)

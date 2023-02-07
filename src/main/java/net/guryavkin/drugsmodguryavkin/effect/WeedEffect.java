@@ -1,32 +1,31 @@
 package net.guryavkin.drugsmodguryavkin.effect;
 
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
 
-public class WeedEffect extends MobEffect
-{
-
-
-    public WeedEffect(MobEffectCategory category, int color)
-    {
+public class WeedEffect extends DrugEffect implements IDrugEffect{
+    public WeedEffect(MobEffectCategory category, int color) {
         super(category, color);
     }
 
     @Override
-    public void applyInstantenousEffect(@Nullable Entity p_19462_, @Nullable Entity p_19463_, LivingEntity p_19464_, int p_19465_, double p_19466_) {
-        super.applyInstantenousEffect(p_19462_, p_19463_, p_19464_, p_19465_, p_19466_);
+    public String GetShaderPath() {
+        return null;
     }
 
     @Override
-    public boolean isInstantenous() {
-        return true;
+    public void ServerSideAct(Level level, Player player) {
+
     }
 
     @Override
-    public boolean isDurationEffectTick(int duration, int amplifier) {
-        return super.isDurationEffectTick(duration, amplifier);
+    public void ClientSideAct() {
+
+    }
+
+    @Override
+    public void Applied(Player player, int duration) {
+
     }
 }

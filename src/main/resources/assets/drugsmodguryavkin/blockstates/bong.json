@@ -1,9 +1,24 @@
 {
   "variants":
   {
-    "":
+    "facing=north":
     {
-      "model": "drugsmodguryavkin:block/bong"
+      "model": "drugsmodguryavkin:block/bong_north"
+    },
+
+    "facing=east":
+    {
+      "model": "drugsmodguryavkin:block/bong_east"
+    },
+
+    "facing=south":
+    {
+      "model": "drugsmodguryavkin:block/bong_south"
+    },
+
+    "facing=west":
+    {
+      "model": "drugsmodguryavkin:block/bong_west"
     }
   }
 }

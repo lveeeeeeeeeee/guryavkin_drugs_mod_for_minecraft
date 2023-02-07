@@ -1,12 +1,18 @@
 {
   "item.drugsmodguryavkin.weed": "Трава",
   "item.drugsmodguryavkin.bong": "Водник",
+  "item.drugsmodguryavkin.weed_seeds": "Семена конопли",
+  "item.drugsmodguryavkin.weed_flower": "Куст конопли",
 
   "block.drugsmodguryavkin.bong": "Водник",
+  "block.drugsmodguryavkin.weed_bush": "Конопля",
 
-  "itemGroup.drugstab": "Drugs mod by Guryavkin",
+  "block.drugsmodguryavkin.weed_flower_wild": "Дикая конопля",
+  "block.drugsmodguryavkin.weed_flower_potted": "Конопля в горшке",
 
-  "effect.drugsmodguryavkin.weed_effect": "Накурин)))",
-  "key.category.drugsmodguryavkin.fuckery": "ЁБЛЯ С НАРКОТИКАМИ",
-  "key.drugsmodguryavkin.fuckery": "СЛОВИТЬ ПЕРЕДОЗ"
+  "itemGroup.drugstab": "Мод на наркотики от Гурявкина",
+
+  "effect.drugsmodguryavkin.lsd_effect": "Глюки))",
+  "key.category.drugsmodguryavkin.fuckery": "не работает",
+  "key.drugsmodguryavkin.fuckery": "не работает"
 }
