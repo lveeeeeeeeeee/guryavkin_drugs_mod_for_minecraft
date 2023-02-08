@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:wheat"
+    },
+    "X": {
+      "item": "minecraft:cocoa_beans"
+    },
+    "~":
+    {
+      "item": "minecraft:sugar"
+    },
+    "!":
+    {
+      "item": "drugsmodguryavkin:weed"
+    }
+  },
+  "pattern": [
+    "#X",
+    "~!"
+  ],
+  "result": {
+    "count": 2,
+    "item": "drugsmodguryavkin:weed_cookie"
+  }
+}

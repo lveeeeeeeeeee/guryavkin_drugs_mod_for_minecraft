@@ -1,0 +1,22 @@
+{
+    "textures": {
+        "particle": "drugsmodguryavkin:block/weed_cake_side",
+        "bottom": "drugsmodguryavkin:block/weed_cake_bottom",
+        "top": "drugsmodguryavkin:block/weed_cake_top",
+        "side": "drugsmodguryavkin:block/weed_cake_side",
+        "inside": "drugsmodguryavkin:block/weed_cake_inner"
+    },
+    "elements": [
+        {   "from": [ 7, 0, 1 ],
+            "to": [ 15, 8, 15 ],
+            "faces": {
+                "down":  { "texture": "#bottom", "cullface": "down" },
+                "up":    { "texture": "#top" },
+                "north": { "texture": "#side" },
+                "south": { "texture": "#side" },
+                "west":  { "texture": "#inside" },
+                "east":  { "texture": "#side" }
+            }
+        }
+    ]
+}

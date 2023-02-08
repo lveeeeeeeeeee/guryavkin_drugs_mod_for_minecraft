@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:wheat"
+    },
+    "X": {
+      "item": "minecraft:milk_bucket"
+    },
+    "~":
+    {
+      "item": "minecraft:sugar"
+    },
+    "!":
+    {
+      "item": "drugsmodguryavkin:weed"
+    }
+  },
+  "pattern": [
+    "~~~",
+    "!X!",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "item": "drugsmodguryavkin:weed_cake"
+  }
+}

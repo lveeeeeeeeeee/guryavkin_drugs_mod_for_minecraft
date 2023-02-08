@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "drugsmodguryavkin:gashnsh"
+    }
+  },
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "result": {
+    "item": "drugsmodguryavkin:gashnsh_block",
+    "count": 1
+  }
+}

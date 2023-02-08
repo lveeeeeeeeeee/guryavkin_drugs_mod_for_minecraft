@@ -5,6 +5,8 @@ import net.guryavkin.drugsmodguryavkin.block.ModBlocks;
 import net.guryavkin.drugsmodguryavkin.effect.ModEffects;
 import net.guryavkin.drugsmodguryavkin.item.ModItems;
 import net.guryavkin.drugsmodguryavkin.networking.ModMessages;
+import net.guryavkin.drugsmodguryavkin.world.feature.ModConfiguredFeatures;
+import net.guryavkin.drugsmodguryavkin.world.feature.ModPlacedFeatures;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Blocks;
@@ -36,6 +38,8 @@ public class DrugsModGuryavkin
         ModItems.Register(modEventBus);
         ModBlocks.register(modEventBus);
         ModEffects.register(modEventBus);
+        ModConfiguredFeatures.register(modEventBus);
+        ModPlacedFeatures.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -63,6 +67,13 @@ public class DrugsModGuryavkin
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+            event.enqueueWork(() ->
+            {
+                ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(
+                        ModBlocks.WEED_FLOWER.getId(), ModBlocks.WEED_FLOWER_POTTED
+                );
+            }
+            );
         }
     }
 

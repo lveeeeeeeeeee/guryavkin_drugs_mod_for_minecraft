@@ -61,6 +61,11 @@ public class Bong extends HorizontalDirectionalBlock
         return InteractionResult.sidedSuccess(level.isClientSide);
     }
 
+    @Override
+    public VoxelShape getCollisionShape(BlockState p_60572_, BlockGetter p_60573_, BlockPos p_60574_, CollisionContext p_60575_) {
+        return Bong.SHAPE;
+    }
+
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
     public Bong(Properties properties)

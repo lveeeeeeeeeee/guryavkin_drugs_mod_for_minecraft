@@ -25,7 +25,7 @@ public class WeedEffect extends DrugEffect implements IDrugEffect{
     }
 
     @Override
-    public void Applied(Player player, int duration) {
+    public void Applied(Player player, int duration, int amp) {
 
     }
 }

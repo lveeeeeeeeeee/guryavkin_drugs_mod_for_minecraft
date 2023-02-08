@@ -49,16 +49,16 @@ public class LSDEffect extends DrugEffect implements IDrugEffect
     }
 
     @Override
-    public void Applied(Player player, int duration) {
+    public void Applied(Player player, int duration, int amp) {
         // server acts on level (to properly renew effects) (used in C2S handler)
         if (!player.level.isClientSide())
         {
             // apply the effects
-            player.addEffect(new MobEffectInstance(MobEffects.HUNGER, duration, 1, false, false));
-            player.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, duration, 1, false, false));
-            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, duration, 1, false, false));
-            player.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, duration, 1, false, false));
-            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, duration, 1, false, false));
+            player.addEffect(new MobEffectInstance(MobEffects.HUNGER, duration, amp, false, false));
+            player.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, duration, amp, false, false));
+            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, duration, amp, false, false));
+            player.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, duration, amp, false, false));
+            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, duration, amp, false, false));
         }
     }
 

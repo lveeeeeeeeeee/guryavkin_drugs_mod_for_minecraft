@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "drugsmodguryavkin:weed"
+    },
+    "~": {
+      "item": "drugsmodguryavkin:weed_buds"
+    }
+  },
+  "pattern": [
+    "#~",
+    "~#"
+  ],
+  "result": {
+    "item": "drugsmodguryavkin:gashnsh",
+    "count": 2
+  }
+}

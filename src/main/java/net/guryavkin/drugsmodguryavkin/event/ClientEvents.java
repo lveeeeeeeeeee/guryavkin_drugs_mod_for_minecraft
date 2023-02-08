@@ -13,10 +13,12 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.CakeBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.event.entity.living.MobEffectEvent;
+import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -27,6 +29,7 @@ public class ClientEvents
     @Mod.EventBusSubscriber(modid = DrugsModGuryavkin.MOD_ID, value = Dist.CLIENT)
     public static class ClientKeyEvents
     {
+
         @SubscribeEvent
         public static void onAdded(MobEffectEvent.Added event)
         {
@@ -38,7 +41,7 @@ public class ClientEvents
             {
                 IDrugEffect _effect = (IDrugEffect) effect;
                 _effect.ServerSideAct(level, (Player) entity);
-                _effect.Applied((Player) entity, effectInstance.getDuration());
+                _effect.Applied((Player) entity, effectInstance.getDuration(), effectInstance.getAmplifier());
                 System.out.println("TURNING ON THE SHADER");
                 ModMessages.sendToServer(new HighC2SPacket((ServerPlayer) entity));
                 ModMessages.sendToPlayer(new HighS2CPacket(true, _effect.GetShaderPath()), (ServerPlayer) entity);

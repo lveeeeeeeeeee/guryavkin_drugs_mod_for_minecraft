@@ -19,18 +19,49 @@
                   "block": "drugsmodguryavkin:weed_bush",
                   "condition": "minecraft:block_state_property",
                   "properties": {
-                    "age": "7"
+                    "age": "5"
                   }
                 }
               ],
-              "name": "drugsmodguryavkin:weed"
+              "name": "drugsmodguryavkin:weed_flower_wild"
             },
             {
               "type": "minecraft:item",
               "name": "drugsmodguryavkin:weed_seeds"
-
             }
           ]
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "block": "drugsmodguryavkin:weed_bush",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "age": "6"
+                  }
+                }
+              ],
+              "name": "drugsmodguryavkin:weed_flower_wild"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "drugsmodguryavkin:weed_seeds"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "drugsmodguryavkin:weed"
         }
       ],
       "rolls": 1.0

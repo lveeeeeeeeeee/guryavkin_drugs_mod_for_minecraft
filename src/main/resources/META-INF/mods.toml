@@ -29,7 +29,7 @@ displayName="Drugs Mod" #mandatory
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="mod_icon.png" #optional
 # A text field displayed in the mod UI
-credits="Code, shaders and 3d Blockbench models: guryavkin lyoha, \ntextures: blibi_tpk" #optional
+credits="Code, shaders and 3d Blockbench models: guryavkin lyoha, \ntextures: blibi_tpk \nLCD effect shader: gleurop on shaderstoy.com" #optional
 # A text field displayed in the mod UI
 authors="guryavkin lyoha, blibi_tpk" #optional
 # Display Test controls the display for your mod in the server connection screen

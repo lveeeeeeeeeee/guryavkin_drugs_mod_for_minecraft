@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "drugsmodguryavkin:weed_flower_wild"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "item": "drugsmodguryavkin:weed"
+  }
+}

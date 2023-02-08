@@ -2,12 +2,19 @@
   "item.drugsmodguryavkin.weed": "Weed",
   "item.drugsmodguryavkin.bong": "Bong",
   "item.drugsmodguryavkin.weed_seeds": "Weed seeds",
+  "item.drugsmodguryavkin.weed_flower_wild": "Weed bush",
+
+  "item.drugsmodguryavkin.weed_buds": "Weed buds",
+  "item.drugsmodguryavkin.gashnsh": "GASHNSH",
+  "item.drugsmodguryavkin.weed_cake": "Space cake",
+  "item.drugsmodguryavkin.weed_cookie": "Space cookie",
 
   "block.drugsmodguryavkin.bong": "Bong",
+  "block.drugsmodguryavkin.gashnsh_block": "GASHNSH block",
+  "block.drugsmodguryavkin.gashnsh_bricks": "Large GASHNSH bricks",
+  "block.drugsmodguryavkin.gashnsh_bricks_small": "GASHNSH bricks",
   "block.drugsmodguryavkin.weed_bush": "Weed bush",
-
-  "item.drugsmodguryavkin.weed_flower": "Weed bush",
-
+  "block.drugsmodguryavkin.weed_cake": "Space cake",
   "block.drugsmodguryavkin.weed_flower_wild": "Wild weed",
   "block.drugsmodguryavkin.weed_flower_potted": "Weed in a pot",
 

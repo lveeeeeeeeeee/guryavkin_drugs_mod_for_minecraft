@@ -2,17 +2,26 @@
   "item.drugsmodguryavkin.weed": "Трава",
   "item.drugsmodguryavkin.bong": "Водник",
   "item.drugsmodguryavkin.weed_seeds": "Семена конопли",
-  "item.drugsmodguryavkin.weed_flower": "Куст конопли",
+  "item.drugsmodguryavkin.weed_flower_wild": "Куст конопли",
+
+  "item.drugsmodguryavkin.weed_buds": "Бошки",
+  "item.drugsmodguryavkin.gashnsh": "ГАШNШ",
+  "item.drugsmodguryavkin.weed_cake": "Весёлый торт",
+  "item.drugsmodguryavkin.weed_cookie": "Весёлое печенье",
 
   "block.drugsmodguryavkin.bong": "Водник",
+  "block.drugsmodguryavkin.gashnsh_block": "Блок ГАШNШа",
+  "block.drugsmodguryavkin.gashnsh_bricks": "Большие кирпичи из ГАШNШа",
+  "block.drugsmodguryavkin.gashnsh_bricks_small": "ГАШNШные кирпичи",
   "block.drugsmodguryavkin.weed_bush": "Конопля",
-
+  "block.drugsmodguryavkin.weed_cake": "Весёлый торт",
   "block.drugsmodguryavkin.weed_flower_wild": "Дикая конопля",
   "block.drugsmodguryavkin.weed_flower_potted": "Конопля в горшке",
 
   "itemGroup.drugstab": "Мод на наркотики от Гурявкина",
 
   "effect.drugsmodguryavkin.lsd_effect": "Глюки))",
+
   "key.category.drugsmodguryavkin.fuckery": "не работает",
   "key.drugsmodguryavkin.fuckery": "не работает"
 }

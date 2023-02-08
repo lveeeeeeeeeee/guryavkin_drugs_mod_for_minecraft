@@ -54,7 +54,7 @@ public class HighC2SPacket {
                 {
                     IDrugEffect gre = (IDrugEffect)effect.getEffect();
                     drugging.add(gre);
-                    gre.Applied(player, effect.getDuration());
+                    gre.Applied(player, effect.getDuration(), effect.getAmplifier());
                 }
             }
         }
