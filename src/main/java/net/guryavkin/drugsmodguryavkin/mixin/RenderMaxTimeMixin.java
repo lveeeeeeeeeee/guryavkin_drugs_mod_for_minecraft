@@ -26,7 +26,7 @@ public abstract class RenderMaxTimeMixin implements IPostChainTweak, AutoCloseab
      * @author guryavkin
      * @reason 1 second of time for the shader????? too little
      */
-    @Overwrite(remap = false)
+    @Overwrite(remap = true)
     public void process(float p_110024_) {
         if (p_110024_ < this.lastStamp) {
             this.time += 1.0F - this.lastStamp;
@@ -35,7 +35,7 @@ public abstract class RenderMaxTimeMixin implements IPostChainTweak, AutoCloseab
             this.time += p_110024_ - this.lastStamp;
         }
 
-        for(this.lastStamp = p_110024_; this.time > 2400.0F; this.time -= 2400.0F) {
+        for(this.lastStamp = p_110024_; this.time > 3600.0F; this.time -= 3600.0F) {
         }
 
         for(PostPass postpass : this.passes) {

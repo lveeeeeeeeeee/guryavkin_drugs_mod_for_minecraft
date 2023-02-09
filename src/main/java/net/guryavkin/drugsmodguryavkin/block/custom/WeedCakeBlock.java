@@ -74,7 +74,7 @@ public class WeedCakeBlock extends CakeBlock {
                 {
                     player.addEffect(
                             new MobEffectInstance(ModEffects.WEED.get(),
-                                    3000, 2, false, false));
+                                    3000, 1));
                 }
             }
             else

@@ -1,18 +1,11 @@
 package net.guryavkin.drugsmodguryavkin.networking.packet;
 
-import net.guryavkin.drugsmodguryavkin.effect.DrugEffect;
 import net.guryavkin.drugsmodguryavkin.effect.IDrugEffect;
-import net.guryavkin.drugsmodguryavkin.effect.LSDEffect;
-import net.guryavkin.drugsmodguryavkin.networking.ModMessages;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.network.NetworkEvent;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.function.Supplier;

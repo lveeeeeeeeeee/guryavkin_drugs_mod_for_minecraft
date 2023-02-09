@@ -20,7 +20,7 @@ public class ModConfiguredFeatures {
     public static final RegistryObject<ConfiguredFeature<?, ?>> WEED_PLACEMENT = CONFIGURED_FEATURES.register(
             "weed",
             () -> new ConfiguredFeature<>(Feature.FLOWER,
-                    new RandomPatchConfiguration(16, 4, 2,
+                    new RandomPatchConfiguration(40, 4, 2,
                             PlacementUtils.onlyWhenEmpty(
                                     Feature.SIMPLE_BLOCK,
                                     new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.WEED_FLOWER.get()))

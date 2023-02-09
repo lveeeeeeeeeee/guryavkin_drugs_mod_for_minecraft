@@ -21,7 +21,7 @@ public class ModPlacedFeatures {
     public static final RegistryObject<PlacedFeature> WEED_PLACEMENT = PLACED_FEATURES.register(
             "weed_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.WEED_PLACEMENT.getHolder().get(),
-                    List.of(RarityFilter.onAverageOnceEvery(20),
+                    List.of(RarityFilter.onAverageOnceEvery(16),
             InSquarePlacement.spread(),
             PlacementUtils.HEIGHTMAP,
             BiomeFilter.biome()))

@@ -8,6 +8,9 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
@@ -45,15 +48,18 @@ public class Bong extends HorizontalDirectionalBlock
     public InteractionResult use(BlockState block, Level level, BlockPos blockPos, Player player, InteractionHand hand, BlockHitResult blockHitResult) {
         if (!level.isClientSide())
         {
-            if(block.getValue(BONG_STATE) == 0 && player.getItemInHand(hand).getItem() == ModItems.WEED.get())
+            if(block.getValue(BONG_STATE) == 0 && player.getItemInHand(hand).getItem() == ModItems.WEED_BUDS.get())
             {
                 player.getItemInHand(hand).shrink(1);
                 level.setBlock(blockPos, block.setValue(BONG_STATE, 1), 3);
             }
-            else if (block.getValue(BONG_STATE) == 1 && player.getItemInHand(InteractionHand.MAIN_HAND).getItem() == Items.AIR)
+            else if (block.getValue(BONG_STATE) == 1 &&
+                    player.getItemInHand(InteractionHand.MAIN_HAND).getItem() != ModItems.WEED_BUDS.get())
             {
                 System.out.println(block.getValue(BONG_STATE));
                 level.setBlock(blockPos, block.setValue(BONG_STATE, 0), 3);
+                level.playSound(null, player.getOnPos(), SoundEvents.BUBBLE_COLUMN_WHIRLPOOL_AMBIENT,
+                        SoundSource.BLOCKS, 0.8f, level.random.nextFloat() * 0.1f + 0.75f);
                 player.addEffect(new MobEffectInstance(ModEffects.WEED.get(), 2400));
                 player.awardStat(Stats.ITEM_USED.get(ModBlocks.BONG.get().asItem()));
             }

@@ -54,7 +54,7 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(DrugsModGuryavkin.DRUGSTAB).food(
                     new FoodProperties.Builder().nutrition(4).saturationMod(3f)
                             .effect(
-            () -> new MobEffectInstance(ModEffects.WEED.get(), 1200, 1, false, false),
+            () -> new MobEffectInstance(ModEffects.WEED.get(), 1200, 0, false, false),
                                     0.9f
                             ).build()
             ).stacksTo(16).rarity(Rarity.UNCOMMON)));

@@ -1,7 +1,29 @@
+import com.google.common.base.Utf8
+
+buildscript {
+    repositories {
+        maven { url = 'https://maven.minecraftforge.net' }
+        maven { url = 'https://repo.spongepowered.org/repository/maven-public/'}
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
+    }
+}
+
 plugins {
     id 'eclipse'
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '5.1.+'
+}
+
+apply plugin: 'org.spongepowered.mixin'
+apply plugin: 'maven-publish'
+apply plugin: 'eclipse'
+apply plugin: 'net.minecraftforge.gradle'
+
+mixin {
+    add sourceSets.main, "mixins.drugsmodguryavkin.refmap.json"
 }
 
 version = '0.0.1-1.19.2'
@@ -10,6 +32,7 @@ archivesBaseName = 'drugsmod'
 
 // Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 minecraft {
@@ -36,6 +59,8 @@ minecraft {
         client {
             workingDirectory project.file('run')
 
+
+
             // Recommended logging data for a userdev environment
             // The markers can be added/remove as needed separated by commas.
             // "SCAN": For mods scan.
@@ -51,12 +76,16 @@ minecraft {
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             property 'forge.enabledGameTestNamespaces', 'drugsmod'
 
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+
             mods {
                 drugsmod {
                     source sourceSets.main
                 }
             }
-            args '--tweakClass', 'org.spongepowered.asm.launch.MixinTweaker', '--mixin', 'mixins.drugsmodguryavkin.json'
+            arg '-mixin=mixins.drugsmodguryavkin.json'
+            args '--tweakClass', 'org.spongepowered.asm.launch.MixinTweaker'
         }
 
         server {
@@ -67,6 +96,9 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             property 'forge.enabledGameTestNamespaces', 'drugsmod'
+
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
 
             mods {
                 drugsmod {
@@ -87,6 +119,9 @@ minecraft {
 
             property 'forge.enabledGameTestNamespaces', 'drugsmod'
 
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+
             mods {
                 drugsmod {
                     source sourceSets.main
@@ -100,6 +135,9 @@ minecraft {
             property 'forge.logging.markers', 'REGISTRIES'
 
             property 'forge.logging.console.level', 'debug'
+
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
             args '--mod', 'drugsmod', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
@@ -131,6 +169,7 @@ dependencies {
     // that the dep is a ForgeGradle 'patcher' dependency, and its patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     minecraft 'net.minecraftforge:forge:1.19.2-43.2.3'
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
     // Real mod deobf dependency examples - these get remapped to your current mappings
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency
@@ -150,11 +189,11 @@ jar {
     manifest {
         attributes([
                 "Specification-Title"     : "drugsmod",
-                "Specification-Vendor"    : "drugsmodsareus",
+                "Specification-Vendor"    : "guryavkin",
                 "Specification-Version"   : "1", // We are version 1 of ourselves
-                "Implementation-Title"    : project.name,
+                "Implementation-Title"    : "drugsmodguryavkin",
                 "Implementation-Version"  : project.jar.archiveVersion,
-                "Implementation-Vendor"   : "drugsmodsareus",
+                "Implementation-Vendor"   : "guryavkin",
                 "TweakClass": "org.spongepowered.asm.launch.MixinTweaker",
                 "MixinConfigs": "mixins.drugsmodguryavkin.json",
                 "FMLCorePluginContainsFMLMod": "true",
@@ -162,11 +201,14 @@ jar {
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
+
+    rename "mixin.refmap.json", "mixins.drugsmodguryavkin.refmap.json"
 }
 
 // Example configuration to allow publishing using the maven-publish plugin
 // This is the preferred method to reobfuscate your jar file
 jar.finalizedBy('reobfJar')
+
 // However if you are in a multi-project build, dev time needs unobfed jar files, so you can delay the obfuscation until publishing by doing
 // publish.dependsOn('reobfJar')
 

@@ -15,8 +15,8 @@ public class ModEffects {
             create(ForgeRegistries.MOB_EFFECTS, DrugsModGuryavkin.MOD_ID);
 
     public static final RegistryObject<MobEffect> WEED = MOB_EFFECTS.register(
-            "lsd_effect",
-            () -> new LSDEffect(MobEffectCategory.NEUTRAL, MobEffects.POISON.getColor())
+            "weed_effect",
+            () -> new WeedEffect(MobEffectCategory.NEUTRAL, MobEffects.POISON.getColor())
     );
 
     public static void register(IEventBus eventBus)
